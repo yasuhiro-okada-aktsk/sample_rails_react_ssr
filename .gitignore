@@ -42,5 +42,11 @@ bower.json
 # Ignore Byebug command history file.
 .byebug_history
 
+
+# npm
+
+node_modules
+
+# IntelliJ / RubyMine
 .idea
 *.iml
