@@ -1,12 +1,5 @@
 import React from 'react';
 import {render} from 'react-dom';
 
+import './components/SampleComponent';
 
-const container = document.getElementById('react');
-
-render(
-  (
-    <div>React!!</div>
-  ),
-  container
-);
