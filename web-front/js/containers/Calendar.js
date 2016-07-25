@@ -3,49 +3,49 @@ import {connect} from 'react-redux';
 
 import {defaultMapDispatchToProps} from '../actions/index';
 
-class App extends React.Component {
-  static propTypes = {
-    // Injected by React Router
-    children: PropTypes.node,
-  };
+class Calendar extends React.Component {
+  static propTypes = {};
 
   constructor(...args) {
     super(...args);
-
-    this._onScroll = this._onScroll.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this._onScroll, false);
   }
 
   componentDidUpdate(prevProps, prevState) {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this._onScroll, false);
   }
 
   render() {
-    const {children} = this.props;
+    const {count} = this.props;
 
     return (
-      <div>
-        {children}
+      <div style={{border: '1px solid #eee'}}>
+        <h1>Calendar</h1>
+
+        <button type="button" onClick={this._onClick.bind(this)}>add</button>
+
+        <p>current value: {count}</p>
       </div>
     );
   }
 
-  _onScroll() {
+  _onClick() {
+    const {actions} = this.props;
+    actions.countInc();
   }
 }
 
 function mapStateToProps(state) {
   return {
+    count: state.count,
   };
 }
 
 export default connect(
   mapStateToProps,
   defaultMapDispatchToProps,
-)(App);
+)(Calendar);

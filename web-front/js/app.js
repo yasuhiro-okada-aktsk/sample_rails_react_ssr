@@ -1,34 +1,10 @@
 import React from 'react';
 import ReactDOM, {render} from 'react-dom';
 
-import Root from './containers/Root';
-import configureStore from './store/configureStore';
+import createRoot from './createRoot';
 
-const store = configureStore();
+import CourseListPage from './containers/CourseListPage';
+import Calendar from './containers/Calendar';
 
-class RailsComponent extends React.Component {
-  static propTypes = {};
-
-  constructor(...args) {
-    super(...args);
-  }
-
-  componentDidMount() {
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-  }
-
-  componentWillUnmount() {
-  }
-
-  render() {
-    return (
-      <Root store={store}/>
-    );
-  }
-}
-
-//window.React = React;
-//window.ReactDOM = ReactDOM;
-window.RailsComponent = RailsComponent;
+window.CourseListPage = createRoot(CourseListPage);
+window.Calendar = createRoot(Calendar);

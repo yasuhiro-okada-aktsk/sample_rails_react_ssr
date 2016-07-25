@@ -1,11 +1,9 @@
-import {routeReducer} from 'react-router-redux';
 import {combineReducers} from 'redux';
 
-import * as UserReducers from './user';
+import * as CountReducers from './count';
 
 const rootReducer = combineReducers({
-  routing: routeReducer,
-  ...UserReducers,
+  ...CountReducers,
 });
 
 export default rootReducer;
