@@ -10,6 +10,9 @@ class CourseListPage extends React.Component {
     super(...args);
   }
 
+  componentWillMount() {
+  }
+
   componentDidMount() {
   }
 
