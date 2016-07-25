@@ -1,5 +1,10 @@
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDOM, {render} from 'react-dom';
 
-import './components/SampleComponent';
+import createRoot from './createRoot';
 
+import CourseListPage from './containers/CourseListPage';
+import Calendar from './containers/Calendar';
+
+window.CourseListPage = createRoot(CourseListPage);
+window.Calendar = createRoot(Calendar);
